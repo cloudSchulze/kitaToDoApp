@@ -13,21 +13,18 @@ export class ItemService {
   constructor(
     @InjectRepository(ItemEntity)
     private itemRepo: Repository<ItemEntity>,
-  ) {
-  }
+  ) {}
   async addItem(item: Item): Promise<Item> {
     var newItem: ItemEntity = {
       text: item.text,
-      checked: false
+      checked: false,
     };
-    
+
     var newItemEntity = await this.itemRepo.save(newItem);
     return ItemEntityToDto(newItemEntity);
   }
 
-  async updateItem(
-    item: Item,
-  ): Promise<Item> {
+  async updateItem(item: Item): Promise<Item> {
     var oldItem = await this.itemRepo
       .createQueryBuilder('item')
       .where('item.id = :id', { id: item.id })
@@ -45,10 +42,10 @@ export class ItemService {
 
   async getItems(): Promise<Item[]> {
     try {
-      const items = await this.itemRepo.getMany();
+      const items = await this.itemRepo.find();
       return items.map((item) => ItemEntityToDto(item));
     } catch (error) {
-      throw error; // new InternalServerErrorException();
+      throw error;
     }
   }
 

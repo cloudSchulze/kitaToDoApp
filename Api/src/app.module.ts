@@ -1,7 +1,4 @@
-import {
-  Module,
-  NestModule,
-} from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
@@ -20,9 +17,7 @@ import { ItemEntity } from './entities/Item.entity';
       username: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [
-        ItemEntity,
-      ],
+      entities: [ItemEntity],
       synchronize: process.env.DB_SYNC_ENTITIES === 'true',
       extra: {
         ssl: true,
@@ -34,4 +29,5 @@ import { ItemEntity } from './entities/Item.entity';
   providers: [AppService],
 })
 export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer): void {}
 }

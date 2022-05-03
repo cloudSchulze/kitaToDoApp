@@ -13,7 +13,7 @@
     "prestart:dev": "rimraf dist",
     "prestart:win:dev": "rimraf dist",
     "start:dev": "docker volume create kitaToDo_db_data&&SET DB_PORT=4599&&docker compose -f docker-compose.yml -p kitaToDo_dev up -d --build -V --remove-orphans&&npm run start:debug",
-    "start:dev:win": "docker volume create kitatodo_db_data&&SET DB_PORT=4599&&docker compose -f docker-compose.yml -p kitaToDo_dev up -d --build -V --remove-orphans&&npm run start:debug:win",
+    "start:dev:win": "docker volume create kitatodo_db_data&&SET DB_PORT=4599&&docker compose -f docker-compose.yml -p kitaToDo_dev up -d --build -V --remove-orphans&&npm run start:win:debug",
     "start:debug": "NODE_ENV=develop&&nest start --debug 0.0.0.0:9229 --watch",
     "start:win:debug": "SET NODE_ENV=develop&&nest start --debug 0.0.0.0:9229 --watch",
     "start:prod": "node dist/main",

@@ -15,5 +15,5 @@ services:
       - ${DB_PORT}:3306
 
 volumes:
-  greenburg_db_data:
+  kitatodo_db_data:
     external: true

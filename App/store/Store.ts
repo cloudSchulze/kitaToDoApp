@@ -1,7 +1,7 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 
-import itemSaga from "./Items/itemSaga";
+import itemSaga from "./Items/ItemSaga";
 
 import { all } from "redux-saga/effects";
 import { itemReducer } from "./Items/ItemReducer";
