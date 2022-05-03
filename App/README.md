@@ -1,10 +1,8 @@
-## Vorbereitung
+## Starten der App
 
-Auf dem lokalen System muss Docker installiert sein.
+- `yarn` in den Projects ausführen (Wichtig! Auch das Common Project!)
+- Bitte zunächst die Api starten (siehe Api -> README.md)
 
-## Starten der Entwicklungsumgebung
-
-- Docker App auf dem OS Starten
 - `yarn` in den Projects ausführen (Wichtig! Auch das Common Project!)
 - Kopiere die .env.example nach .env
 - Setzte die korrekten Einstellungen in der neuen .env (Falls nichts geändert wurde, nur die IP-Adressen)
