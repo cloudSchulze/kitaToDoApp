@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  db:
+    image: mysql
+    container_name: 'kitaToDo-mysql'
+    volumes:
+      - kitatodo_db_data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=kita123
+      - MYSQL_DATABASE=kitaToDo
+    ports:
+      - ${DB_PORT}:3306
+
+volumes:
+  greenburg_db_data:
+    external: true

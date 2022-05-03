@@ -1,0 +1,17 @@
+{
+  "name": "kitatodo-common",
+  "version": "1.0.0",
+  "description": "Types and Enums for Api and App",
+  "main": "index.js",
+  "author": "Benjamin Schulze <benjamin.schulze@cloudbucket.de>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "compile": "tsc -b"
+  },
+  "devDependencies": {
+    "shx": "^0.3.3",
+    "typescript": "^4.5.3"
+  },
+  "dependencies": {}
+}
