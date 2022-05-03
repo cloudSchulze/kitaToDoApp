@@ -1,12 +1,24 @@
-## Vorbereitung
+## Starten der App
 
-Die App wurde mittels Expo erstellt
-
-## Starten der Entwicklungsumgebung
-
-- Docker App auf dem OS Starten
 - `yarn` in den Projects ausführen (Wichtig! Auch das Common Project!)
-- Unter config/env.ts die korrekte Ip zur Api eintragen
-- `yarn start` zum starten von Expo
-- Im Browser auf den Menü-Punkt: `Run on iOS simulator` oder `Run on Android device/emulator`
-- Alternativ kann der Expo Client auf ein reales Device heruntergeladen werden. Wenn das Device im selben Netzwerk ist, kann die App auch darauf gestartet werden.
+- Bitte zunächst die Api starten (siehe Api -> README.md)
+
+- `yarn` in den Projects ausführen (Wichtig! Auch das Common Project!)
+- Kopiere die .env.example nach .env
+- Setzte die korrekten Einstellungen in der neuen .env (Falls nichts geändert wurde, nur die IP-Adressen)
+- `yarn start:dev` (für Windows `npm run start:dev:win`)
+- Die Docker-Container sollte nun gebuildet und gestartet werden
+
+### Initales Ausführen der Migrations
+
+> Beim ersten Ausführen, wird die Datenbank nicht automatisch erstellt. Die Migrations müssen initial ausgeführt werden
+
+In einem neuen Terminal Fenster `npm run typeorm:migration:run` (für Windows `typeorm:win:migration:run`) ausführen
+Die Datenbank sollte nun mit den entsprechenden Tabellen befüllt sein.
+
+### Erreichbarkeit API und DB
+
+- API Port 5002
+- DB Port 4599
+- Dev DB Name "kitaToDo"
+- Dev DB Passwort "kita123"
